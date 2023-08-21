@@ -1,0 +1,9 @@
+mybatis:
+  mapper-locations: classpath:mybatis/sql/**/*.xml
+  type-aliases-package: com.jieun.velog.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  profiles:
+    include: db
