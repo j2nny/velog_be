@@ -19,6 +19,7 @@
             , LAST_MOD_DTTM
             , LAST_MOD_USER_ID
         FROM POST
+        WHERE REG_DTTM BETWEEN #{searchStartDate} AND #{searchEndDate}
     </select>
 
     <select id="getPostListCount" resultType="Integer" parameterType="PostSearch">
@@ -26,5 +27,6 @@
         SELECT
             COUNT(1)
         FROM POST
+--         WHERE REG_DTTM BETWEEN #{searchStartDate} AND #{searchEndDate}
     </select>
 </mapper>
