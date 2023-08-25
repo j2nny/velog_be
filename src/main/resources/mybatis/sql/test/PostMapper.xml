@@ -27,6 +27,6 @@
         SELECT
             COUNT(1)
         FROM POST
---         WHERE REG_DTTM BETWEEN #{searchStartDate} AND #{searchEndDate}
+        WHERE REG_DTTM BETWEEN #{searchStartDate} AND #{searchEndDate}
     </select>
 </mapper>
