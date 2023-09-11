@@ -22,4 +22,11 @@ public class PostService {
 
         return postListCount > 0 ? postMapper.getPostList(postSearch) : Collections.emptyList();
     }
+
+    /*
+        게시물 단건 조회
+    */
+    public Post getPost(int postNo){
+        return postMapper.getPost(postNo);
+    }
 }

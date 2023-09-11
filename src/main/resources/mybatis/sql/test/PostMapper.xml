@@ -29,4 +29,23 @@
         FROM POST
         WHERE REG_DTTM BETWEEN #{searchStartDate} AND #{searchEndDate}
     </select>
+
+    <select id="getPost" resultType="Post" parameterType="Integer">
+        SELECT
+               POST_NO
+             , TITLE
+             , CONTENT
+             , THUMBNAIL_IMG_PATH
+             , TAG
+             , OPNPUB_YN
+             , URL
+             , SERIES
+             , EXPLN_CNTNT
+             , REG_DTTM
+             , REG_USER_ID
+             , LAST_MOD_DTTM
+             , LAST_MOD_USER_ID
+        FROM POST
+        WHERE POST_NO = #{postNo}
+    </select>
 </mapper>

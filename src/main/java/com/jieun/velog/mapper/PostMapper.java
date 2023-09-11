@@ -17,4 +17,9 @@ public interface PostMapper {
         게시물 개수 조회
     */
     Integer getPostListCount(PostSearch postSearch);
+
+    /*
+        게시물 단건 조회
+     */
+    Post getPost(int postNo);
 }

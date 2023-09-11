@@ -6,6 +6,7 @@ import com.jieun.velog.service.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,14 @@ public class PostController {
     public List<Post> getPostList(PostSearch postSearch) {
         log.info("게시물 목록 조회");
         return postService.getPostList(postSearch);
+    }
+
+    /*
+        게시물 단건 조회
+     */
+    @GetMapping("/{postNo}")
+    public Post getPost(@PathVariable("postNo") int postNo) {
+        log.info("게시물 단건 조회");
+        return postService.getPost(postNo);
     }
 }
