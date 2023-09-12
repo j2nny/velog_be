@@ -16,6 +16,7 @@ logs/
 
 ### IntelliJ IDEA ###
 application-db.yml
+application-jwt.yml
 .idea
 *.iws
 *.iml
