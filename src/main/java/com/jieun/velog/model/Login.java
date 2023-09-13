@@ -12,4 +12,7 @@ public class Login {
 
     //토큰
     String token;
+
+    //메시지
+    String Message;
 }
