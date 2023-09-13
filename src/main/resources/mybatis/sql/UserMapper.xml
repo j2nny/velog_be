@@ -4,13 +4,13 @@
     <select id="findByLoginIdAndPwd" resultType="User">
         /* LoginId, Pwd 로 일치하는 사용자 정보 조회 */
         SELECT USER_NO
-             , LOGIN_ID
+             , ID
              , EMAIL
              , NAME
              , PWD
              , GRADE
              , PROFILE_IMG_PATH
         FROM   USER
-        WHERE  LOGIN_ID = #{loginId} AND PWD = #{pwd}
+        WHERE  EMAIL = #{email} AND PWD = #{pwd}
     </select>
 </mapper>

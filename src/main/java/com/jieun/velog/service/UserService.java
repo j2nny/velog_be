@@ -11,7 +11,7 @@ public class UserService {
 
     private final UserMapper userMapper;
 
-    public User getUserByLoginIdAndPwd(String loginId, String pwd){
-        return userMapper.findByLoginIdAndPwd(loginId, pwd);
+    public User getUserByLoginIdAndPwd(String email, String pwd){
+        return userMapper.findByLoginIdAndPwd(email, pwd);
     }
 }

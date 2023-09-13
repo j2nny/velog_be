@@ -39,9 +39,9 @@ public class JwtProvider {
         String token = Jwts.builder()
                 .setHeaderParam("typ", "JWT")
                 .setIssuer(issuer)
-                .setSubject(user.getLoginId())
+                .setSubject(user.getEmail())
                 .claim("userNo", user.getUserNo())
-                .claim("loginId", user.getLoginId())
+                .claim("id", user.getId())
                 .claim("email", user.getEmail())
                 .claim("name", user.getName())
                 .setIssuedAt(now) // Fri Jun 24 2016 15:33:42 GMT-0400 (EDT)
@@ -64,7 +64,7 @@ public class JwtProvider {
                 .getBody();
         return User.builder()
                 .userNo((Integer) claims.getOrDefault("userNo", 0))
-                .loginId(claims.getOrDefault("loginId", "").toString())
+                .id(claims.getOrDefault("id", "").toString())
                 .email(claims.getOrDefault("email", "").toString())
                 .name(claims.getOrDefault("name", "").toString())
                 .build();

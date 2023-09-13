@@ -11,8 +11,8 @@ public class User extends BaseObject {
     //회원번호
     Integer userNo;
 
-    //회원로그인ID
-    String loginId;
+    //id
+    String id;
 
     //이메일
     String email;

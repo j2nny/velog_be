@@ -5,10 +5,7 @@ import com.jieun.velog.model.Login;
 import com.jieun.velog.model.User;
 import com.jieun.velog.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -17,9 +14,9 @@ public class UserController {
     private final UserService userService;
     private final JwtProvider jwtProvider;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Login loginUser(@RequestBody User user) {
-        User userData = userService.getUserByLoginIdAndPwd(user.getLoginId(), user.getPwd());
+        User userData = userService.getUserByLoginIdAndPwd(user.getEmail(), user.getPwd());
 
         Login login = new Login();
         login.setUser(userData);
