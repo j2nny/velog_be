@@ -14,10 +14,10 @@ public class UserService {
     private final UserMapper userMapper;
     private final JwtProvider jwtProvider;
 
-    public Login getUserByLoginIdAndPwd(String email, String pwd){
+    public Login getUserByEmailAndPwd(String email, String pwd){
 
         Login login = new Login();
-        User user = userMapper.findByLoginIdAndPwd(email, pwd);
+        User user = userMapper.findByEmailAndPwd(email, pwd);
 
         if(user != null) {
             login.setUser(user);
@@ -28,5 +28,9 @@ public class UserService {
         }
 
         return login;
+    }
+
+    public boolean duplicateEmailCheck(String email) {
+        return userMapper.findByEmail(email) == null;
     }
 }

@@ -17,7 +17,13 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public Login loginUser(@RequestBody User user) {
-        return userService.getUserByLoginIdAndPwd(user.getEmail(), user.getPwd());
+    public Login login(@RequestBody User user) {
+        return userService.getUserByEmailAndPwd(user.getEmail(), user.getPwd());
     }
+
+    @PostMapping("/duplicate-email-check")
+    public boolean duplicateEmailCheck(@RequestBody User user) {
+        return userService.duplicateEmailCheck(user.getEmail());
+    }
+
 }
